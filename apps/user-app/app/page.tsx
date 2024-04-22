@@ -2,11 +2,17 @@
 import Home from '@repo/ui/home'
 import { useState, useEffect } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
+import { useRouter } from 'next/navigation';
 
 export default function Page(): JSX.Element {
 
   const [loading, setloading] = useState(true)
   const [count, setcount] = useState(0)
+  const router = useRouter()
+
+  const handlelogin  = () =>{
+    router.push('/home')
+  }
 
   useEffect(()=>{
 
@@ -49,7 +55,7 @@ export default function Page(): JSX.Element {
      
     </div>: 
   
-    <Home title="WalletPe"></Home>
+    <Home title="WalletPe" move={handlelogin}></Home>
   
   }
    </> 

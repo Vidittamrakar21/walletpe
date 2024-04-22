@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./home": "./src/home.tsx"
+    "./home": "./src/home.tsx",
+    "./nav": "./src/nav.tsx",
+    "./sidebar": "./src/sidebar.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

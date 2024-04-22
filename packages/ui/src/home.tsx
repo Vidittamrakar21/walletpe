@@ -3,6 +3,7 @@ import { useState } from "react"
 
 type propstype = {
   title: string
+  move: ()=>void
 }
 
 export default function home(props: propstype){
@@ -11,6 +12,10 @@ export default function home(props: propstype){
 
     const handlebox = () =>{
       openbox(!box)
+    }
+
+    const handlelogin = () =>{
+      props.move()
     }
 
 
@@ -45,7 +50,7 @@ export default function home(props: propstype){
           <h3 className="text-[gray]">Password</h3>
           <input type="password" className="h-[36px] w-[330px] border border-[gray] rounded mt-1"  />
         </div>
-        <button className="h-[36px] w-[330px] bg-[#11E980] rounded text-[white] mt-6 cursor-pointer">Sign Up</button>
+        <button onClick={handlelogin} className="h-[36px] w-[330px] bg-[#11E980] rounded text-[white] mt-6 cursor-pointer">Sign Up</button>
         <h2 className="text-[gray] mt-2">or</h2>
 
         <div className="h-[36px] w-[330px] bg-[white] border border-[gray] flex items-center justify-evenly rounded cursor-pointer mt-4" >
@@ -80,7 +85,7 @@ export default function home(props: propstype){
           <h5 className="text-[#419FE4] text-[14px] underline cursor-pointer">Forgot Password?</h5>
           
         </div>
-        <button className="h-[36px] w-[330px] bg-[#11E980] rounded text-[white] mt-6 cursor-pointer">Log In</button>
+        <button onClick={handlelogin} className="h-[36px] w-[330px] bg-[#11E980] rounded text-[white] mt-6 cursor-pointer">Log In</button>
         <h2 className="text-[gray] mt-2">or</h2>
 
         <div className="h-[36px] w-[330px] bg-[white] border border-[gray] flex items-center justify-evenly rounded cursor-pointer mt-4" >
