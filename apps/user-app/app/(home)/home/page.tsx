@@ -1,6 +1,16 @@
 "use client"
 
+import { useRouter } from "next/navigation"
+
 export default function Home () {
+
+    const router = useRouter();
+
+    const handlepay = (x:boolean,y:boolean) =>{
+
+        router.push(`/pay?phone=${x}&&walletid=${y}`)
+    }
+
     return(
         <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none  ">
             <div className="h-[300px] w-[600px] bg-[white] rounded-[18px] absolute top-[170px] left-[300px] flex items-center justify-center flex-col shadow-lg">
@@ -22,7 +32,7 @@ export default function Home () {
 
             </div>
 
-            <div className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[470px] left-[300px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+            <div onClick={()=>{handlepay(true,false)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[470px] left-[300px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
                 <h2 className="ml-4 text-[purple]">Pay via Mobile Number</h2>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="purple" className="ml-5"  viewBox="0 0 16 16 ">
@@ -31,7 +41,7 @@ export default function Home () {
                 </svg>
             </div>
             
-            <div className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[570px] left-[300px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+            <div onClick={()=>{handlepay(false,true)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[570px] left-[300px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
                 <h2 className="ml-4 text-[purple]" >Pay via Wallet Id</h2>
 
                 <div className="ml-5 text-[19px] text-[purple]">
