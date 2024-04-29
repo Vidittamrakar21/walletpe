@@ -3,6 +3,7 @@
 type propstype = {
     title: string
     move: (x:string)=>void
+    logout: ()=>void
 
 }
 
@@ -12,6 +13,8 @@ export default function Nav(props: propstype){
     function handlemove(){
         props.move('/home');
     }
+
+    
     
 
     return(
@@ -25,7 +28,7 @@ export default function Nav(props: propstype){
          <h1 onClick={handlemove} className="text-[28px] text-[#424052] font-[500] ml-2 cursor-pointer">{props.title}</h1>
 
 
-        <button className="h-[37px] w-[90px] text-[white] rounded bg-[#11E980] ml-3 select-none cursor-pointer relative left-[1300px]">Log Out</button>
+        <button onClick={()=>{props.logout()}} className="h-[37px] w-[90px] text-[white] rounded bg-[#11E980] ml-3 select-none cursor-pointer relative left-[1300px]">Log Out</button>
 
 
          <div className="h-[45px] w-[45px] ml-3  flex justify-center items-center select-none cursor-pointer relative left-[1300px]">

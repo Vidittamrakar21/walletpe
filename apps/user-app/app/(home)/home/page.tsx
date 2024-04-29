@@ -1,7 +1,9 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { Line } from 'react-chartjs-2';
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useEffect } from "react";
 
 export default function Home () {
 
@@ -11,6 +13,38 @@ export default function Home () {
 
         router.push(`/pay?phone=${x}&&walletid=${y}`)
     }
+
+    const check = async () => {
+       const token =  Cookies.get("refreshtoken")
+
+       if(token) {
+        const data  = await (await axios.post('http://localhost:8000/api/auth/verify', {token: token})).data;
+        if(data.status){
+            console.log("status", data.status)
+
+        }
+        else{
+            Cookies.remove("refreshtoken")
+            router.push("/")
+        }
+       }
+
+       else{
+        Cookies.remove("refreshtoken")
+        router.push("/")
+    }
+
+    return(
+        <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none ">
+
+        </div>
+    )
+    }
+
+
+    useEffect(()=>{
+        check()
+    },[])
 
     return(
         <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none  ">

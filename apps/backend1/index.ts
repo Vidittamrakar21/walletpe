@@ -3,6 +3,7 @@ import morgan from "morgan"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import jwt from "jsonwebtoken"
+import cors from 'cors'
 dotenv.config();
 //@ts-ignore
 import authrouter from './routes/auth'
@@ -11,6 +12,7 @@ const app = express()
 
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(cors())
 
 main().catch(err => console.log(err));
 

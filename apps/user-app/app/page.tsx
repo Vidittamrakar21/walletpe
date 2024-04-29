@@ -3,6 +3,10 @@ import Home from '@repo/ui/home'
 import { useState, useEffect } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import { useRouter } from 'next/navigation';
+import {signInWithPopup , GoogleAuthProvider} from "firebase/auth"
+import {auth} from "./firebase"
+import axios from 'axios';
+import Cookies from 'js-cookie'
 
 export default function Page(): JSX.Element {
 
@@ -10,8 +14,120 @@ export default function Page(): JSX.Element {
   const [count, setcount] = useState(0)
   const router = useRouter()
 
-  const handlelogin  = () =>{
-    router.push('/home')
+  const googleAuth = new GoogleAuthProvider();
+
+  const handlelogin  = async (x: string, y:string ,n:string, z: string ) =>{
+
+  console.log(x,y,n)
+  
+      if (z === 'signin'){
+
+        const userdata  = await (await axios.post('http://localhost:8000/api/auth/signup', {email: x, password: y, name: n, gprovider: false})).data;
+      
+      if(userdata.token){
+     
+        const data  = await (await axios.post('http://localhost:8000/api/auth/session', {token: userdata.token})).data;
+
+        if (data.refreshtoken){
+          Cookies.set('refreshtoken',data.refreshtoken, {expires: 3} )
+           router.push('/home')
+
+        }
+        else {
+          alert("Unable To Sign In, Try Again Later ")
+        }
+
+
+      }
+      else if(userdata.message){
+        alert("Kindly Login to Continue ")
+      }
+      
+      }
+
+      else if(z === 'login'){
+
+        const userdata  = await (await axios.post('http://localhost:8000/api/auth/login', {email: x, password: y})).data;
+      
+      if(userdata.token){
+     
+        const data  = await (await axios.post('http://localhost:8000/api/auth/session', {token: userdata.token})).data;
+
+        if (data.refreshtoken){
+          Cookies.set('refreshtoken',data.refreshtoken, {expires: 3} )
+           router.push('/home')
+
+        }
+        else {
+          alert("Unable To Log In, Try Again Later ")
+        }
+
+
+      }
+      else if(userdata.message){
+        alert(userdata.message)
+      }
+   
+      
+    }
+
+
+  
+  }
+
+  const googleauth  = async (x: string) =>{
+    const result  =  await signInWithPopup(auth, googleAuth);
+
+    if(result.user.emailVerified === true && result.user.refreshToken){
+      if (x === 'signin'){
+        const userdata  = await (await axios.post('http://localhost:8000/api/auth/signup', {email: result.user.email, password: "", name: result.user.displayName, gprovider: true})).data;
+      
+      if(userdata.token){
+     
+        const data  = await (await axios.post('http://localhost:8000/api/auth/session', {token: userdata.token})).data;
+
+        if (data.refreshtoken){
+          Cookies.set('refreshtoken',data.refreshtoken, {expires: 3} )
+           router.push('/home')
+
+        }
+        else {
+          alert("Unable To Sign In, Try Again Later ")
+        }
+
+
+      }
+      else if(userdata.message){
+        alert("Kindly Login to Continue ")
+      }
+      
+      }
+
+      else if(x === 'login'){
+
+        const userdata  = await (await axios.post('http://localhost:8000/api/auth/login', {email: result.user.email, password: ""})).data;
+      
+      if(userdata.token){
+     
+        const data  = await (await axios.post('http://localhost:8000/api/auth/session', {token: userdata.token})).data;
+
+        if (data.refreshtoken){
+          Cookies.set('refreshtoken',data.refreshtoken, {expires: 3} )
+           router.push('/home')
+
+        }
+        else {
+          alert("Unable To Log In, Try Again Later ")
+        }
+
+
+      }
+      else if(userdata.message){
+        alert(userdata.message)
+      }
+   
+      }
+    }
   }
 
   useEffect(()=>{
@@ -55,7 +171,7 @@ export default function Page(): JSX.Element {
      
     </div>: 
   
-    <Home title="WalletPe" move={handlelogin}></Home>
+    <Home title="WalletPe" move={handlelogin} gsign={googleauth}></Home>
   
   }
    </> 
