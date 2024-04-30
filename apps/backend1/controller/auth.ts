@@ -114,7 +114,7 @@ const loginacc = async (req:Request, res:Response) => {
         else{
 
               //@ts-ignore
-              res.json({message: "User doesn't exists"})
+              res.json({message:"Invalid Email or Password"})
           
 
            

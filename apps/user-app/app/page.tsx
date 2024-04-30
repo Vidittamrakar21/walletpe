@@ -130,6 +130,34 @@ export default function Page(): JSX.Element {
     }
   }
 
+
+  const check = async () => {
+    const token =  Cookies.get("refreshtoken")
+
+    if(token) {
+     const data  = await (await axios.post('http://localhost:8000/api/auth/verify', {token: token})).data;
+     if(data.status){
+         console.log("status", data.status)
+         router.push("/home")
+
+     }
+     else{
+         Cookies.remove("refreshtoken")
+         router.push("/")
+     }
+    }
+
+    else{
+     Cookies.remove("refreshtoken")
+     router.push("/")
+ }
+
+ 
+ }
+
+
+ 
+
   useEffect(()=>{
 
   const timer =  setInterval(() => {
@@ -145,7 +173,7 @@ export default function Page(): JSX.Element {
     }, 3000)
 
   
-     
+     check()
     
   },[])
   
