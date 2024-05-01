@@ -20,7 +20,10 @@ export default function Home () {
        if(token) {
         const data  = await (await axios.post('http://localhost:8000/api/auth/verify', {token: token})).data;
         if(data.status){
-            console.log("status", data.status)
+            // console.log("status", data.status)
+            Cookies.set('name', data.status.name)
+            Cookies.set('uid', data.status.id)
+
 
         }
         else{
