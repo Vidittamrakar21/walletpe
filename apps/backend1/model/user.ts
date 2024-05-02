@@ -6,6 +6,7 @@ const Schema  = mongoose.Schema;
 const userSchema  =  new Schema({
     email: String,
     number: Number,
+    walletid: String,
     name: String,
     password: {type: String, default: ""},
     gprovider: Boolean,

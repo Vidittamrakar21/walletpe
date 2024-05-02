@@ -4,17 +4,37 @@ import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 import dotenv from "dotenv"
 dotenv.config();
+import {Response , Request} from 'express'
 
 const createacc = async (req:Request, res:Response) => {
     try {
-        //@ts-ignore
+
         const {email , password, name , gprovider } = req.body;
 
         const exists =  await User.findOne({email: email});
 
-        if(exists){
+        function generateRandomString(): string {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+            const parts = name.split(' ');
 
             //@ts-ignore
+            const formattedName = parts.map((part) => part.toLowerCase()).join('');
+
+            let result = '';
+            for (let i = 0; i < 5; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters[randomIndex];
+            }
+            return `${formattedName + result}@walletpe`;
+        }
+        
+        const randomString =  generateRandomString();
+      
+        
+
+        if(exists){
+
             res.json({message: "User already exists"})
         }
         else{
@@ -24,19 +44,20 @@ const createacc = async (req:Request, res:Response) => {
                 
                     const encryptpass  = bcrypt.hash(password,salt,async (err, hash)=>{
                         if(err){
-                            //@ts-ignore
+                       
                             res.json({"message": "error occured while signing user"})
                         }
                         else{
     
-                            const newuser  = await User.create({email: email, password: hash, name: name})
+                            const newuser  = await User.create({email: email, password: hash, name: name , walletid: randomString})
                             
                              
     
                             if(newuser){
+                     
                                 //@ts-ignore
                                 const token = jwt.sign({id: newuser._id,email: newuser.email,name: newuser.name},process.env.seckey,{expiresIn: "60000"})
-                                //@ts-ignore
+                      
                                 res.json({data: newuser, token: token })
                             }
     
@@ -48,9 +69,10 @@ const createacc = async (req:Request, res:Response) => {
             else if(gprovider === true && password === ""){
                 const newuser  = await User.create({email: email, name: name , gprovider: gprovider})
                 if(newuser){
+                 
                     //@ts-ignore
                     const token = jwt.sign({id: newuser._id,email: newuser.email,name: newuser.name},process.env.seckey,{expiresIn: "60000"})
-                    //@ts-ignore
+              
                     res.json({data: newuser, token: token })
                 }            
                              
@@ -62,7 +84,7 @@ const createacc = async (req:Request, res:Response) => {
 
         
     } catch (error) {
-        //@ts-ignore
+     
         res.json(error)
     }
 }
@@ -70,7 +92,7 @@ const createacc = async (req:Request, res:Response) => {
 
 const loginacc = async (req:Request, res:Response) => {
     try {
-        //@ts-ignore
+   
         const {email , password } = req.body;
 
         const exists =  await User.findOne({email: email});
@@ -82,7 +104,7 @@ const loginacc = async (req:Request, res:Response) => {
                 const check = await bcrypt.compare(password,exists.password );
 
                 if(check === false){
-                     //@ts-ignore
+             
                       res.json({message: "Invalid Email or Password"})
                 }
 
@@ -91,7 +113,7 @@ const loginacc = async (req:Request, res:Response) => {
                     
                     //@ts-ignore
                     const token = jwt.sign({id: exists._id,email: exists.email,name: exists.name},process.env.seckey,{expiresIn: "60000"})
-                    //@ts-ignore
+          
                     res.json({data: exists, token: token })
                 
 
@@ -128,6 +150,22 @@ const loginacc = async (req:Request, res:Response) => {
     }
 }
 
+
+const finduser = async (req:Request , res: Response) =>{
+    try {
+
+        const {id} = req.body;
+        const user  = await User.findById(id);
+
+        if(user){
+            res.json({user:user})
+        }
+        
+    } catch (error) {
+        
+        res.json(error)
+    }
+}
 
 const createsession = (req: Request, res: Response) => {
     try {
@@ -194,4 +232,4 @@ const verifytoken = (req: Request, res: Response) => {
 
 
 
-module.exports = {createacc, createsession, verifytoken, loginacc}
+module.exports = {createacc, createsession, verifytoken, loginacc , finduser}

@@ -3,11 +3,35 @@
 import { useRouter } from "next/navigation"
 import Cookies from "js-cookie";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
+
+interface usertype {
+    email: string,
+    number: number,
+    walletid: string,
+    name: string,
+    password: string,
+    gprovider: boolean,
+    transactions:  [string],
+    balance: number
+}
+
+const init = {
+    email: "",
+    number: 0,
+    walletid: "",
+    name: "",
+    password: "",
+    gprovider: true,
+    transactions:  [""],
+    balance: 0
+}
 
 export default function Home () {
 
     const router = useRouter();
+    //@ts-ignore
+    const [data, setdata] = useState<usertype>({})
 
     const handlepay = (x:boolean,y:boolean) =>{
 
@@ -23,6 +47,11 @@ export default function Home () {
             // console.log("status", data.status)
             Cookies.set('name', data.status.name)
             Cookies.set('uid', data.status.id)
+
+            const userdata  = await (await axios.post('http://localhost:8000/api/auth/getuser', {id:  data.status.id})).data;
+            if(userdata){
+                setdata(userdata.user)
+            }
 
 
         }
@@ -57,7 +86,7 @@ export default function Home () {
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z"/>
                 </svg>
-                <h1 className="text-[40px] font-[500]">23,520</h1>
+                <h1 className="text-[40px] font-[500]">{data.balance}</h1>
 
                 </div>
 
