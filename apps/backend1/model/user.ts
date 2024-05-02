@@ -10,7 +10,7 @@ const userSchema  =  new Schema({
     password: {type: String, default: ""},
     gprovider: Boolean,
     transactions: {type: [], default: []},
-    balance: String
+    balance: {type: Number, default: 0}
 })
 
 module.exports = mongoose.model("users", userSchema);
