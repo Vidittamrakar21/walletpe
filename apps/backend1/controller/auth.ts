@@ -49,7 +49,7 @@ const createacc = async (req:Request, res:Response) => {
                         }
                         else{
     
-                            const newuser  = await User.create({email: email, password: hash, name: name , walletid: randomString})
+                            const newuser  = await User.create({email: email, password: hash, name: name ,gprovider:false, walletid: randomString})
                             
                              
     
@@ -67,7 +67,7 @@ const createacc = async (req:Request, res:Response) => {
             }
 
             else if(gprovider === true && password === ""){
-                const newuser  = await User.create({email: email, name: name , gprovider: gprovider})
+                const newuser  = await User.create({email: email, name: name , gprovider: gprovider ,  walletid: randomString})
                 if(newuser){
                  
                     //@ts-ignore

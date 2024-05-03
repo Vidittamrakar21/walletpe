@@ -31,16 +31,20 @@ export default function Transfer () {
 
         if(!(amount && bank)){
             alert("All the fields are required !")
+            setproccess(false)
+
            
         }
         else{
 
            if(amount > 20000){
             alert("You can only add upto Rs 20000 at a time !")
+            setproccess(false)
           
            }
            else if(amount <= 0){
             alert("Amount can't be 0 or negative !")
+            setproccess(false)
           
 
            }
@@ -52,10 +56,12 @@ export default function Transfer () {
                 setproccess(false)
                 router.replace('/home')
                 window.open(`https://mydummybank.netlify.app/${bank}?token=${data.token}`, '_blank');
+                setproccess(false)
     
             }
             else{
                 alert("Unable to proccess the request, Try again later !")
+                setproccess(false)
                 setproccess(false)
             }
            }
@@ -88,7 +94,7 @@ export default function Transfer () {
                     <option value="SBI">SBI</option>
                 </select>
 
-                <button onClick={addmoney} className="h-[35px] w-[390px]  ml-3 mt-[30px] rounded bg-[#424052] text-[white]" disabled={false}>Add Money</button>
+                <button onClick={addmoney} className={proccess === false ? "h-[35px] w-[390px]  ml-3 mt-[30px] rounded bg-[#424052] text-[white]":"hidden"} disabled={false}>Add Money</button>
                 <div className={proccess === true ? "flex relative top-[10px] left-[190px]" : "hidden"}>
                   <ClipLoader color="#575958" loading={true} />
                 </div>
