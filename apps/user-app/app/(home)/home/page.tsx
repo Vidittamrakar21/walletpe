@@ -81,7 +81,8 @@ export default function Home () {
 
     return(
         <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none  ">
-            <div className="h-[300px] w-[600px] bg-[white] rounded-[18px] absolute top-[170px] left-[300px] flex items-center justify-center flex-col shadow-lg">
+
+            <div className="h-[300px] w-[600px] bg-[white] rounded-[18px] absolute top-[170px] left-[390px] flex items-center justify-center flex-col shadow-lg">
 
                 <div className="flex justify-center items-center h-[80px] min-w-[200px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" viewBox="0 0 16 16">
@@ -100,7 +101,7 @@ export default function Home () {
 
             </div>
 
-            <div onClick={()=>{handlepay(true,false)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[170px] left-[950px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+            <div onClick={()=>{handlepay(true,false)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[145px] left-[1030px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
                 <h2 className="ml-4 text-[purple]">Pay via Mobile Number</h2>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="purple" className="ml-5"  viewBox="0 0 16 16 ">
@@ -109,7 +110,7 @@ export default function Home () {
                 </svg>
             </div>
             
-            <div onClick={()=>{handlepay(false,true)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[270px] left-[950px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+            <div onClick={()=>{handlepay(false,true)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[250px] left-[1030px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
                 <h2 className="ml-4 text-[purple]" >Pay via Wallet Id</h2>
 
                 <div className="ml-5 text-[19px] text-[purple]">
@@ -117,8 +118,16 @@ export default function Home () {
                 </div>
             </div>
 
+            <div onClick={()=>{handlepay(false,true)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[350px] left-[1030px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+                <h2 className="ml-4 text-[purple]" >Pay Contacts</h2>
 
-            <div className="h-[280px] w-[1250px]  absolute top-[500px] left-[300px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-scroll overflow-x-hidden">
+                <div className="ml-5 text-[19px] text-[purple]">
+                    @
+                </div>
+            </div>
+
+
+            <div className="h-[280px] w-[1250px]  absolute top-[500px] left-[390px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-scroll overflow-x-hidden">
 
 {/* /// */}
 
