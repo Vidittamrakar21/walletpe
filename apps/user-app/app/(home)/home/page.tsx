@@ -118,7 +118,7 @@ export default function Home () {
                 </div>
             </div>
 
-            <div onClick={()=>{handlepay(false,true)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[350px] left-[1030px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
+            <div onClick={()=>{handlepay(false,false)}} className=" h-[70px] w-[600px] mt-[30px] bg-[white] rounded-[18px] absolute top-[350px] left-[1030px] flex items-center justify-start select-none cursor-pointer  shadow-lg">
                 <h2 className="ml-4 text-[purple]" >Pay Contacts</h2>
 
                 
