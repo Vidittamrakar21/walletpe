@@ -114,7 +114,7 @@ export default function Profile ()  {
                 </div>
                </div>
 
-                <div className={!data.number && otpbox === false? "w-[600px] h-[200px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col":"hidden"}>
+                <div className={!data.number && otpbox === false? "w-[600px] h-[200px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col shadow-lg":"hidden"}>
                     <h1 className="text-[17px]">Add and Verify your Mobile Number to start payments</h1>
                     <input onChange={handlenumber} value={num} type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Enter Mobile Number" />
                     <button onClick={sendotp} className="bg-[#11E980] text-[white] h-[35px] w-[350px] mt-[20px] cursor-pointer">Send OTP</button>
@@ -123,14 +123,14 @@ export default function Profile ()  {
 
 
 
-                <div className={!data.number && otpbox === true? "w-[600px] h-[200px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col":"hidden"}>
+                <div className={!data.number && otpbox === true? "w-[600px] h-[200px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col shadow-lg":"hidden"}>
                     <h1>Enter OTP Sent to +91 9354xxxxxx</h1>
                     <input type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Enter OTP" />
                     <button className="bg-[#11E980] text-[white] h-[35px] w-[350px] mt-[20px] cursor-pointer">Confirm</button>
                 </div>
 
 
-                <div className={!data.pin ? "w-[600px] h-[250px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col":"hidden"}>
+                <div className={!data.pin ? "w-[600px] h-[250px] mt-[30px] bg-[white]  rounded-[18px] flex justify-center items-center flex-col shadow-lg":"hidden"}>
                     <h1 className="text-[17px]">Create a 6 Digit PIN to do Secure and Fast Payments</h1>
                     <input  type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Enter a 6 digit PIN " />
                     <input  type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Confirm PIN " />
