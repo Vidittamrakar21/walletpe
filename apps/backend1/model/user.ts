@@ -11,7 +11,9 @@ const userSchema  =  new Schema({
     password: {type: String, default: ""},
     gprovider: Boolean,
     transactions: {type: [], default: []},
-    balance: {type: Number, default: 0}
+    balance: {type: Number, default: 0},
+    contacts: {type: [], default: []},
+    date: {type: Date, default: Date.now}
 })
 
 module.exports = mongoose.model("users", userSchema);
