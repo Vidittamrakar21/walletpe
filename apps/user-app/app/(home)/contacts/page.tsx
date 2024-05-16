@@ -6,7 +6,31 @@ export default function Contacts () {
         <div className="h-[930px] w-[100%] bg-[#ebebeb]  select-none flex items-center justify-center">
             <div className="h-[600px] w-[800px]  bg-[#f0f0f0] shadow-lg  flex items-center justify-start flex-col overflow-hidden overflow-y-scroll ">
 
-                <div className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] shadow-md flex items-center justify-start mb-2">
+
+                    <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
+                            V
+                    </div>
+
+                    <h2 className="ml-3">Vidit Tamrakar</h2>
+                </div>
+                <div className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] shadow-md flex items-center justify-start mb-2">
+
+                    <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
+                            V
+                    </div>
+
+                    <h2 className="ml-3">Vidit Tamrakar</h2>
+                </div>
+                <div className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] shadow-md flex items-center justify-start mb-2">
+
+                    <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
+                            V
+                    </div>
+
+                    <h2 className="ml-3">Vidit Tamrakar</h2>
+                </div>
+                <div className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] shadow-md flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V

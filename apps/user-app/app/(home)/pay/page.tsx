@@ -66,7 +66,7 @@ export default function Pay () {
 
              <div className={pay=== false && contact=== false && walletid=== 'false' && phone=== 'false' ?"h-[600px] w-[450px] relative top-[170px] left-[300px]  bg-[#f0f0f0] shadow-lg  flex items-center justify-start flex-col overflow-hidden overflow-y-scroll ": "hidden"}>
 
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -74,7 +74,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -82,7 +82,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -90,7 +90,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -98,7 +98,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -106,7 +106,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -114,7 +114,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -122,7 +122,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -130,7 +130,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -138,7 +138,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -146,23 +146,7 @@ export default function Pay () {
 
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
-
-                    <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
-                            V
-                    </div>
-
-                    <h2 className="ml-3">Vidit Tamrakar</h2>
-                </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
-
-                    <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
-                            V
-                    </div>
-
-                    <h2 className="ml-3">Vidit Tamrakar</h2>
-                </div>
-                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] bg-[white] rounded-[18px] flex items-center justify-start mb-2">
+                <div onClick={()=>{setcontact(true)}} className="mt-3 min-h-[60px] w-[400px] shadow-md bg-[white] rounded-[18px] flex items-center justify-start mb-2">
 
                     <div className="ml-3 h-[50px] w-[50px] rounded-[50%] bg-[purple] text-[white] flex items-center justify-center">
                             V
@@ -171,6 +155,7 @@ export default function Pay () {
                     <h2 className="ml-3">Vidit Tamrakar</h2>
                 </div>
 
+               
                 
                 
 
