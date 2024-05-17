@@ -134,7 +134,7 @@ export default function Profile ()  {
                     <h1 className="text-[17px]">Create a 6 Digit PIN to do Secure and Fast Payments</h1>
                     <input  type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Enter a 6 digit PIN " />
                     <input  type="number" className="h-[35px] w-[350px] border border-[gray] mt-[20px]" placeholder="&nbsp;Confirm PIN " />
-                    <button  className="bg-[#11E980] text-[white] h-[35px] w-[350px] mt-[20px] cursor-pointer">Confirm</button>
+                    <button  className="bg-[#11E980] text-[white] h-[35px] w-[350px] mt-[20px] cursor-pointer">Create PIN</button>
 
                 </div>
 
