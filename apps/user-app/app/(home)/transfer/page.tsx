@@ -74,9 +74,9 @@ export default function Transfer () {
    return(
     <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none ">
         <div className="h-[600px] w-[1400px]  absolute top-[170px] left-[350px] flex items-start justify-start flex-col">
-           <div className="h-[80px] w-[330px] bg-[white] flex justify-evenly items-center rounded-[18px] shadow-lg ml-[40px]">
-           <div onClick={()=>{setopt(!opt)}} className={!opt?"h-[40px] w-[120px] rounded-[18px] bg-[#11E980] text-[white] flex justify-center items-center cursor-pointer":"h-[40px] w-[120px] rounded-[18px] bg-[white] border border-[gray] text-[gray] ml-4 flex justify-center items-center cursor-pointer"}>Add Money</div>
-           <div onClick={()=>{setopt(!opt)}} className={opt?"h-[40px] w-[120px] rounded-[18px] bg-[#11E980]  text-[white] flex justify-center items-center cursor-pointer":"h-[40px] w-[120px] rounded-[18px] bg-[white] border border-[gray] text-[gray] ml-4 flex justify-center items-center cursor-pointer"}>Withdraw</div>
+           <div className="h-[80px] w-[415px] bg-[white] flex justify-evenly items-center rounded-[18px] shadow-lg ml-[40px]">
+           <div onClick={()=>{setopt(!opt)}} className={!opt?"h-[40px] w-[180px] rounded-[18px] bg-[#11E980] text-[white] flex justify-center items-center cursor-pointer":"h-[40px] w-[180px] rounded-[18px] bg-[white] border border-[gray] text-[gray]  flex justify-center items-center cursor-pointer"}>Add Money</div>
+           <div onClick={()=>{setopt(!opt)}} className={opt?"h-[40px] w-[180px] rounded-[18px] bg-[#11E980]  text-[white] flex justify-center items-center cursor-pointer":"h-[40px] w-[180px] rounded-[18px] bg-[white] border border-[gray] text-[gray] flex justify-center items-center cursor-pointer"}>Withdraw</div>
             
            </div>
 
