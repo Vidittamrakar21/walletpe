@@ -43,7 +43,7 @@ export default function Settings () {
 
     return (
         <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none flex items-center justify-center">
-            <div className="h-[600px] w-[800px]  flex items-center justify-start flex-col">
+            <div className="h-[600px] w-[800px]  flex items-center justify-start flex-col bg-[#F0F0F0] shadow-lg">
                 
 
             <div onClick={()=>{handleclick('mail')}} className=" h-[70px] w-[600px] bg-[white] rounded-[18px] mt-5 flex items-center justify-start select-none cursor-pointer  shadow-lg">
