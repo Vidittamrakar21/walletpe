@@ -4,7 +4,7 @@
 export default function Transaction () {
     return (
         <div className="h-[930px] w-[100%] bg-[#ebebeb] select-none">
-            <div className="h-[600px] w-[1400px]  absolute top-[170px] left-[300px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-scroll overflow-x-hidden">
+            <div className="h-[600px] w-[1400px]  absolute top-[170px] left-[300px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-y-auto overflow-x-hidden">
 
                 {/* /// */}
 

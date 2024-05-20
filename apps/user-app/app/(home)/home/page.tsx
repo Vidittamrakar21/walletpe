@@ -129,7 +129,7 @@ export default function Home () {
             </div>
 
 
-            <div className="h-[280px] w-[1250px]  absolute top-[500px] left-[390px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-scroll overflow-x-hidden">
+            <div className="h-[280px] w-[1250px]  absolute top-[500px] left-[390px] flex items-center justify-start flex-col bg-[white] rounded-[18px] shadow-lg overflow-y-auto overflow-x-hidden">
 
 {/* /// */}
 
